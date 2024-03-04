@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="collection.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/ieo1rek.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+    <title>A Jewelry Box</title>
+    <script>
+
+document.addEventListener("DOMContentLoaded", function () {
+fetch("collection.json")
+.then((response) => response.json())
+.then((block) => {
+    block.forEach((block, index) => {
+        let element = document.createElement('div') 
+        element.innerText = block.name
+        element.classList.add ('block')
+        element.style.backgroundColorc = block.color
+
+        container.append(element)
+    })
+});
+}); 
+    
+        fetch('collection.json')
+    .then(response => response.json())
+    .then(data => {
+
+    const jewelry = document.getElementById('jewelry');
+        const buttonAll = document.getElementById('all');
+        const buttonNecklaces = document.getElementById('neck');
+        const buttonBracelets = document.getElementById('brace');
+        const buttonRings = document.getElementById('ring');
+        const buttonEarrings = document.getElementById('ear');
+        const buttonPendants = document.getElementById('pend');
+
+    data.forEach(item => {
+        const div = document.createElement('div');
+        const title = document.createElement('h5');
+        const p = document.createElement('p');
+        const p2 = document.createElement('p');
+        const p3 = document.createElement('p');
+        const p4 = document.createElement('p');
+        const p5 = document.createElement('p');
+        const img = document.createElement('img');
+
+        title.textContent = item.Title;
+        p.textContent = item.Type;
+        p2.textContent = item.Color;
+        p3.textContent = item.Brand;
+        p4.textContent = item.Location;
+        p5.textContent = item.When;
+        img.src = "img/" + item.Image;
+
+        buttonAll.addEventListener('click', function(){
+            div.style.display = "block";
+        });
+
+        buttonNecklaces.addEventListener('click', function(){
+            if (item.neckType == 1) {
+                div.style.display = "block";
+            } else {
+                div.style.display = "none";
+            }
+        });
+
+        buttonBracelets.addEventListener('click', function(){
+            if (item.braceType == 1) {
+                div.style.display = "block";
+            } else {
+                div.style.display = "none";
+            }
+        });
+
+        buttonRings.addEventListener('click', function(){
+            if (item.ringType == 1) {
+                div.style.display = "block";
+            } else {
+                div.style.display = "none";
+            }
+        });
+
+        buttonEarrings.addEventListener('click', function(){
+            if (item.earType == 1) {
+                div.style.display = "block";
+            } else {
+                div.style.display = "none";
+            }
+        });
+
+        buttonPendants.addEventListener('click', function(){
+            if (item.pendType == 1) {
+                div.style.display = "block";
+            } else {
+                div.style.display = "none";
+            }
+        });
+        
+        div.appendChild(img);
+        div.appendChild(title);
+        div.appendChild(p);
+        div.appendChild(p2);
+        div.appendChild(p3);
+        div.appendChild(p4);
+        div.appendChild(p5);
+        jewelry.appendChild(div);
+        });
+
+    })
+    .catch(error => console.error(error));
+    </script>
+    <style>
+        .flex-container {
+            display: block;
+            flex-direction:column;
+            align-items: center;
+        }
+        img {
+            height: 400px;
+            margin-bottom: 30px;
+            margin-top: 100px;
+            display: block;
+    margin-left: auto;
+    margin-right: auto;
+        }
+        h5 {
+    font-family: "work-sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+        }
+        p {
+    font-size: 15px; 
+    text-align:center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav> 
+        <div class="head">
+            <div class="title">A Jewelry Box</div>
+        </div>
+        <div class="tabs"></div>
+            <div class="about"><a class="buttons" href="about.html">About</a></div>
+            <div class="home"><a class="buttons" href="home.html">Home</a></div>
+        </div>
+    </nav>
+    
+    <hr>
+
+    <div class="filters">
+    <div class="filter">filter:</div>
+    <button id="all">all</button>
+    <button id="neck">necklaces</button>
+    <button id="brace">bracelets</button>
+    <button id="ring">rings</button>
+    <button id="ear">earrings</button>
+    <button id="pend">pendants</button>
+</div>
+</div>
+    <div id="jewelry" class="flex-container"></div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+[
+  {
+  "name": "block1",
+  "color": "red",
+  "asset": "1.JPG"
+},
+
+{
+  "name": "block1",
+  "color": "blue",
+  "asset": "2.JPG"
+
+},
+
+{
+  "name": "block1",
+  "color": "red",
+  "asset": "3.JPG"
+}
+
+]

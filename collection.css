@@ -1,0 +1,91 @@
+body {
+    background-color: #C6C2C2;
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight: 400;
+    font-size: 25px;
+}
+
+hr {
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.head {
+    margin-left: 0;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 20px;
+    color:black;
+    z-index: 1;
+}
+
+#head :first-child {
+    margin-right: 280px;
+}
+
+.item {
+    width: auto;
+    margin-left: 0px;
+    letter-spacing: -1px;
+    display: inline-flex;
+}
+
+a:link {
+    text-decoration: none;
+    text-decoration: underline;
+    color: black;
+}
+
+a:visited {
+    text-decoration: none;
+    text-decoration: underline;
+    color: black;
+}
+
+a:hover {
+    background-color: whitesmoke;
+    border-radius: 10% 30% 50% 70%;
+}
+
+.subtitle {
+    letter-spacing: -1px;
+    left: 40px;
+    margin-top: 60px;
+    display:grid;
+    position: fixed;
+    z-index: 1;
+ }
+
+ .title {
+    font-family: "work-sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+    text-align: left;
+
+ }
+
+.flex-container {
+    align-items:center;
+    display: block;
+    margin-bottom: 150px;
+}
+
+.filters {
+    display: inline-flex;
+    flex-direction: row;
+    align-items:center;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+button {
+    margin-left: 3px;
+    margin-right: 3px;
+    font-family: sans-serif;
+}
+
+.filter {
+    margin-right: 455px;
+}
+
